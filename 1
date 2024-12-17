@@ -1,48 +1,14 @@
-Scenario Summary
-A trusted third-party vendor that provides software updates for pipeline monitoring and reporting tools notifies your organization about a potential compromise in their software update mechanism. The vendor reports that malicious actors may have injected backdoors into one of their recent updates. Although your organization has defense-in-depth mechanisms and segmented networks, this update was installed on a server within your IT environment.
+Automatic Updates: Some AVEVA products support automatic updates through scheduled events. For instance, in AVEVA Global, users can create update events between pairs of locations to facilitate automatic updates. This setup requires configuration to define the frequency and parameters of the updates. 
+AVEVA HELP
 
-The OT environment is unaffected directly, but questions arise about the potential for lateral movement or data exfiltration that could impact pipeline operations.
+Manual Updates: Many AVEVA products require manual intervention for updates. Users typically need to download the latest software versions or patches from AVEVA's support portals and manually apply them to their systems. For example, AVEVA's Communication Drivers Pack and System Platform updates are available for download, and users must follow specific installation procedures to update their systems. 
+AVEDA SELECT
 
-Injects Timeline
-Day 1: Notification of Vendor Compromise
-Inject 1: Email from Vendor
-"A recent routine update to our [Vendor Software] may have been compromised. We recommend all customers investigate servers where the update was deployed. Additional technical details are attached, including known indicators of compromise (IOCs)."
-Focus Area: Evaluate your team’s ability to investigate IOCs, prioritize potential risks, and assess the affected IT systems.
+Considerations for Your Scenario:
 
-Inject 2: Alert from EDR Solution
-Your EDR solution detects unusual outbound traffic from the server where the update was installed, flagged as potentially malicious.
-Focus Area: Validate detection capabilities, analyze traffic patterns, and determine whether the threat is contained within the IT environment.
+Update Mechanism: Determine whether the AVEVA software in your environment is configured for automatic or manual updates. This information is crucial for accurately simulating the supply chain breach scenario in your tabletop exercise.
 
-Day 2: Potential OT Impact
-Inject 3: Question from OT Team
-"We noticed a minor delay in data being transmitted from the IT system to the pipeline monitoring dashboard. Could this be related to the reported compromise?"
-Focus Area: Encourage IT-OT communication to determine whether the delays are related to the incident or an operational issue.
+Network Connections: Assess whether the software establishes outbound connections to AVEVA servers for updates or other functionalities. Understanding these connections can help in evaluating potential vulnerabilities and the risk of compromised updates.
 
-Inject 4: Request from Leadership
-The COO requests an impact assessment on potential operational risks. They want to know:
-
-Whether pipeline operations could be affected.
-Whether OT data integrity is at risk.
-Focus Area: Develop a high-level communication plan to address leadership concerns and ensure alignment between IT and OT priorities.
-
-Day 3: Threat Containment
-Inject 5: Suspicious Activity Detected in OT Monitoring
-The OT monitoring system detects a login attempt from an IT environment IP address that is unusual and outside normal operating hours.
-Focus Area: Investigate the attempted login, confirm whether it represents lateral movement, and ensure that network segmentation is functioning as designed.
-
-Inject 6: Notification from Incident Response Retainer
-Your IR retainer team provides preliminary findings: the threat actors likely aimed to establish persistence in the IT environment to exfiltrate data but have not breached OT systems. They recommend a full forensic investigation.
-Focus Area: Coordinate incident containment, forensic analysis, and system recovery without disrupting OT operations.
-
-Debrief Objectives
-After the exercise, focus on:
-
-Detection and Monitoring: How quickly did the team identify malicious activity, and how effectively were the IOCs used?
-IT-OT Collaboration: Were there clear communication and escalation protocols between IT and OT teams?
-Incident Management: Was the response plan executed effectively? Were there gaps in containment, communication, or forensic readiness?
-Leadership Communication: How well did the teams convey critical information to executives and reassure them about the safety of operations?
-Policy and Procedure Review: Did the exercise reveal any weaknesses in network segmentation, zero trust policies, or incident response workflows?
-
-
-This scenario provides an opportunity to test collaboration, response, and leadership communication without overwhelming participants. It aligns with the organization's strong defense-in-depth posture while highlighting potential gaps in detection and monitoring capabilities.
+Internal Policies: Review your organization's policies regarding software updates, especially in critical infrastructure environments. Some organizations prefer manual updates to maintain strict control over changes, while others may opt for automatic updates for efficiency
 
